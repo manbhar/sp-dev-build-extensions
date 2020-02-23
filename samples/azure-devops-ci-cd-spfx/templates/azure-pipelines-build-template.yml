@@ -17,11 +17,6 @@ jobs:
         inputs:
           versionSpec: 10.x
           checkLatest: true
-      - task: CacheBeta@1
-        inputs:
-          key: npm | $(Agent.OS) | package-lock.json
-          path: $(npm_config_cache)
-          cacheHitVar: CACHE_RESTORED
       - script: npm ci
         displayName: 'npm ci'
 
